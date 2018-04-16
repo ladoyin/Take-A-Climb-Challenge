@@ -1,13 +1,13 @@
 function butclick(){
-    var table1 = $('#table1');
-    var tableBody = table1.find('#tableBody');
-    var lastName = $('#lname');
-    var firstName = $('#fname');
-    var middleName = $('#mname');
-    var phoneNumber = $('#pnumber');
-    var email = $('#email');
-    table1.on('click','#add',addPerson);
-    table1.on('click','#delete' ,deletePerson);
+    var table1 = document.getElementById('table1');
+    var tableBody = document.getElementById('tableBody');
+    var lastName = document.getElementById('lname');
+    var firstName = document.getElementById('fname');
+    var middleName = document.getElementById('mname');
+    var phoneNumber = document.getElementById('pnumber');
+    var email = document.getElementById('email');
+    table1.addEventListener('click','#add',addPerson);
+    table1.addEventListener('click','#delete' ,deletePerson);
 
     function addPerson(){
         if(lastName.val() ==="" ){
@@ -21,7 +21,7 @@ function butclick(){
         }else if(email.val() ===""){
             alert('Email * field is compulsory');
         }else{
-            tableBody.append('<tr><td class="editable"  contenteditable="false">'+ lastName.val() + '<td class="editable visible" contenteditable="false">'+ firstName.val()  +  '</td><td class="editable visible" contenteditable="false">'+ middleName.val()  + '<td class="editable visible" contenteditable="false">'+ phoneNumber.val() +  '</td><td class="editable visible" contenteditable="false">' + email.val()  +   '</td><td> <button id="notVisible">More</button> <button id="delete">delete </button>  <button class="visible" id="editButton">edit</button></td></tr>');
+            tableBody.append('<tr><td class="editable"  contenteditable="false">'+ lastName.value + '<td class="editable visible" contenteditable="false">'+ firstName.value  +  '</td><td class="editable visible" contenteditable="false">'+ middleName.value  + '<td class="editable visible" contenteditable="false">'+ phoneNumber.value +  '</td><td class="editable visible" contenteditable="false">' + email.value  +   '</td><td> <button id="notVisible">More</button> <button id="delete">delete </button>  <button class="visible" id="editButton">edit</button></td></tr>');
             $('#clear').trigger('reset');
         }
     }
