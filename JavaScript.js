@@ -73,7 +73,7 @@ function butclick(){
 
         var button2 = document.createElement('button');
         tableD6.appendChild(button2);
-        button2.innerHTML += 'Delete';
+        button2.innerHTML += 'X';
         button2.onclick = function (){
             var del = button2.parentNode.parentNode;
             del.parentNode.removeChild(del);
